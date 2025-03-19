@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Jeopardy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div aria-live="polite" class="announce-for-sr" id="sr-announce"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Vaccine Jeopardy</h1>
+        </header>
+
+        <main id="main">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active glass" style="text-align: center;">
+                <div class="welcome-icon">
+                    <i class="fas fa-syringe" aria-hidden="true"></i>
+                </div>
+                <h2>Welcome to Vaccine Jeopardy!</h2>
+                <p class="welcome-subtitle">Test your knowledge about vaccines and earn points!</p>
+                
+                <!-- Brief Instructions -->
+                <div class="quick-guide">
+                    <h3><i class="fas fa-info-circle icon" aria-hidden="true"></i>Quick Guide:</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon"><i class="fas fa-th-list" aria-hidden="true"></i></div>
+                            <div class="feature-text">Select questions from categories worth $200-$1000</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                            <div class="feature-text">Answer within 30 seconds to earn points</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                            <div class="feature-text">Correct answers add points, incorrect answers subtract points</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                            <div class="feature-text">Try to earn as many points as possible!</div>
+                        </li>
+                    </ul>
+                    
+                    <div class="categories-preview">
+                        <h4>Categories include:</h4>
+                        <div class="category-chips">
+                            <span class="category-chip"><i class="fas fa-book-medical icon" aria-hidden="true"></i>Vaccine History</span>
+                            <span class="category-chip"><i class="fas fa-vial icon" aria-hidden="true"></i>Types of Vaccines</span>
+                            <span class="category-chip"><i class="fas fa-shield-alt icon" aria-hidden="true"></i>Immune Response</span>
+                            <span class="category-chip"><i class="fas fa-heart icon" aria-hidden="true"></i>Vaccination Benefits</span>
+                            <span class="category-chip"><i class="fas fa-globe icon" aria-hidden="true"></i>Global Health</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="screen-buttons">
+                    <button id="start-game-btn" class="btn btn--primary">
+                        <i class="fas fa-play icon" aria-hidden="true"></i>Start Game
+                    </button>
+                    <button id="show-leaderboard-btn" class="btn btn--secondary">
+                        <i class="fas fa-trophy icon" aria-hidden="true"></i>Leaderboard
+                    </button>
+                    <button id="start-instructions-btn" class="btn btn--secondary">
+                        <i class="fas fa-question-circle icon" aria-hidden="true"></i>Instructions
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instructions Screen -->
+            <div id="instructions-screen" class="screen glass instructions-container">
+                <div class="instructions-header">
+                    <i class="fas fa-question-circle" style="color: white;" aria-hidden="true"></i>
+                    <h2>How to Play Vaccine Jeopardy</h2>
+                </div>
+                
+                <div class="instruction-section">
+                    <h3><i class="fas fa-bullseye icon" aria-hidden="true"></i>Objective:</h3>
+                    <p>Answer questions correctly to earn points and become the Vaccine Jeopardy champion!</p>
+                </div>
+                
+                <div class="instruction-section">
+                    <h3><i class="fas fa-gamepad icon" aria-hidden="true"></i>Gameplay:</h3>
+                    <ul class="styled-list">
+                        <li>Choose a category and point value from the game board</li>
+                        <li>Read the question and select your answer within 30 seconds</li>
+                        <li>Correct answers earn the point value shown</li>
+                        <li>Incorrect answers deduct the point value</li>
+                        <li>Try to answer as many questions as you can to maximize your score</li>
+                    </ul>
+                </div>
+                
+                <div class="instruction-section">
+                    <h3><i class="fas fa-th-list icon" aria-hidden="true"></i>Categories:</h3>
+                    <p>The game features five categories related to vaccines:</p>
+                    <div class="category-cards">
+                        <div class="category-card">
+                            <i class="fas fa-book-medical" aria-hidden="true"></i>
+                            <h4>Vaccine History</h4>
+                            <p>The development and history of vaccines</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-vial" aria-hidden="true"></i>
+                            <h4>Types of Vaccines</h4>
+                            <p>Different vaccine technologies and mechanisms</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <h4>Immune Response</h4>
+                            <p>How vaccines interact with your immune system</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            <h4>Vaccination Benefits</h4>
+                            <p>The positive impacts of vaccination</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <h4>Global Health</h4>
+                            <p>Vaccines in the context of worldwide public health</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="instruction-section">
+                    <h3><i class="fas fa-star icon" aria-hidden="true"></i>Scoring:</h3>
+                    <ul class="styled-list">
+                        <li>Questions range from $200 (easier) to $1000 (harder)</li>
+                        <li>Your final score will be recorded on the leaderboard if it ranks in the top 10</li>
+                    </ul>
+                </div>
+                
+                <div class="screen-buttons">
+                    <button id="start-game-from-instructions-btn" class="btn btn--primary">Start Game</button>
+                    <button id="back-to-welcome-from-instructions-btn" class="btn btn--secondary">Back</button>
+                </div>
+            </div>
+
+            <!-- Game Screen -->
+            <div id="game-screen" class="screen">
+                <div class="header-controls" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <button id="new-game-btn" class="btn" aria-label="Start a new game">
+                        <i class="fas fa-redo" aria-hidden="true"></i> New Game
+                    </button>
+                    <button id="show-leaderboard-during-game-btn" class="btn">
+                        <i class="fas fa-trophy" aria-hidden="true"></i> Leaderboard
+                    </button>
+                </div>
+
+                <div class="score-display glass">
+                    <div><span id="current-score" class="score-value">$0</span></div>
+                </div>
+
+                <div id="game-board" class="game-board" aria-label="Jeopardy game board"></div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="game-over-screen" class="screen glass" style="padding: 2rem; text-align: center;">
+                <div class="game-summary">
+                    <div class="game-over-icon">
+                        <i class="fas fa-flag-checkered" style="color: white;" aria-hidden="true"></i>
+                    </div>
+                    <h2>Game Over!</h2>
+                    <p>Your final score:</p>
+                    <div id="final-score" class="final-score">$0</div>
+                </div>
+
+                <div id="name-entry" style="margin: 2rem 0;">
+                    <p>Enter your name to save your score:</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                        <input type="text" id="player-name-input" style="padding: 0.75rem; border-radius: 8px; border: none; width: 250px;" placeholder="Your name">
+                        <button id="save-score-btn" class="btn">Save Score</button>
+                    </div>
+                </div>
+
+                <div class="screen-buttons">
+                    <button id="play-again-btn" class="btn btn--primary">
+                        <i class="fas fa-redo icon" aria-hidden="true"></i>Play Again
+                    </button>
+                    <button id="show-leaderboard-after-game-btn" class="btn btn--secondary">
+                        <i class="fas fa-trophy icon" aria-hidden="true"></i>View Leaderboard
+                    </button>
+                </div>
+
+                <div class="share-section">
+                    <h3>Share your game:</h3>
+                    <button class="btn share-btn" id="share-twitter" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn share-btn" id="share-facebook" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn share-btn" id="share-copy" aria-label="Copy link">
+                        <i class="fas fa-link" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Leaderboard Screen -->
+            <div id="leaderboard-screen" class="screen glass leaderboard">
+                <div class="leaderboard-header">
+                    <i class="fas fa-trophy" style="font-size: 2rem; color: #FFD700; margin-bottom: 1rem; display: block; text-align: center;" aria-hidden="true"></i>
+                    <h2>Top Scores</h2>
+                </div>
+                <ol id="leaderboard-list" class="leaderboard-list"></ol>
+                <div class="screen-buttons">
+                    <button id="back-from-leaderboard-btn" class="btn btn--primary">
+                        <i class="fas fa-arrow-left icon" aria-hidden="true"></i>Back to Game
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Question Modal -->
+    <div id="question-modal" class="modal" role="dialog" aria-labelledby="question-title" aria-modal="true">
+        <div class="modal-content glass">
+            <h2 id="question-title" class="sr-only">Question</h2>
+            <div id="question-category" aria-live="polite"></div>
+            <div id="question-value" aria-live="polite"></div>
+            <div id="question-text" class="question-text" aria-live="polite"></div>
+            <div id="answers" class="answers"></div>
+            <div id="timer" class="timer" aria-live="polite">30</div>
+            <div id="result-feedback" aria-live="assertive"></div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
